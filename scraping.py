@@ -40,7 +40,7 @@ news_p = slide_elem.find('div', class_='article_teaser_body').get_text()
 news_p
 
 
-# ### Featured Images
+# ### JPL Space Images Featured Image
 
 # 10.3.4
 # Visit URL
@@ -65,10 +65,14 @@ img_url_rel
 img_url = f'https://spaceimages-mars.com/{img_url_rel}'
 img_url
 
+# ## Mars Facts
 # 10.3.5
 df = pd.read_html('https://galaxyfacts-mars.com')[0]
+df.head()
+
 df.columns=['description', 'Mars', 'Earth']
 df.set_index('description', inplace=True)
+
 df.to_html()
 
 browser.quit()
